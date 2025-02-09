@@ -1,0 +1,51 @@
+/* themes.css */
+
+/* Light Theme */
+:root {
+    --primary-color: #FF9900; /* AWS Orange */
+    --secondary-dark: #333333; /* Dark Gray */
+    --secondary-light: #F5F5F5; /* Light Gray */
+    --accent-blue: #0073BB; /* Blue */
+    --accent-green: #28A745; /* Green */
+    --accent-red: #DC3545; /* Red */
+    --neutral-white: #FFFFFF; /* White */
+    --neutral-beige: #F8F9FA; /* Soft Beige */
+  }
+  
+  /* Dark Theme */
+  body.dark {
+    --primary-color: #FF9900; /* AWS Orange */
+    --secondary-dark: #F5F5F5; /* Light Gray */
+    --secondary-light: #333333; /* Dark Gray */
+    --accent-blue: #0073BB; /* Blue */
+    --accent-green: #28A745; /* Green */
+    --accent-red: #DC3545; /* Red */
+    --neutral-white: #333333; /* Dark Gray for text */
+    --neutral-beige: #F8F9FA; /* Soft Beige */
+  }
+  
+  /* Apply colors */
+  body.light {
+    background-color: var(--neutral-white);
+    color: var(--secondary-dark);
+  }
+  
+  body.dark {
+    background-color: var(--secondary-light);
+    color: var(--neutral-white);
+  }
+  
+  /* Example styles for buttons and elements */
+  .button-primary {
+    background-color: var(--primary-color);
+    color: var(--neutral-white);
+  }
+  
+  .button-success {
+    background-color: var(--accent-green);
+  }
+  
+  .button-warning {
+    background-color: var(--accent-red);
+  }
+  

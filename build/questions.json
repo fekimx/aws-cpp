@@ -1,0 +1,841 @@
+[
+    {
+        "category": "Intro",
+        "question": "What is Amazon EC2?",
+        "answer": 1,
+        "choices": [
+            "A database service for managing relational data.",
+            "A virtual server that provides scalable computing capacity.",
+            "A tool for monitoring application performance.",
+            "A file storage service for storing and retrieving files in the cloud."
+        ]
+    },
+    {
+        "category": "Intro",
+        "question": "What is multi-tenancy?",
+        "answer": 0,
+        "choices": [
+            "Sharing underlying hardware among multiple virtual machines (VMs)",
+            "Running multiple virtual machines on separate physical servers",
+            "Storing all users' data in a single, non-isolated database",
+            "Providing each user with a dedicated, isolated physical server"
+        ]
+    },
+    {
+        "category": "Intro",
+        "question": "What is ELB?",
+        "answer": 1,
+        "choices": [
+            "Running multiple virtual machines on separate physical servers",
+            "A service that distributes incoming traffic across multiple servers to ensure high availability and reliability",
+            "A tool used for storing data across multiple cloud storage locations",
+            "A service that provides virtual machines for running applications on the cloud"
+        ]
+    },
+    {
+        "category": "EC2 Types",
+        "question": "Which EC2 instance type is ideal for web servers and code repositories?",
+        "answer": 0,
+        "choices": [
+            "General Purpose",
+            "Compute Optimized",
+            "Memory Optimized",
+            "Storage Optimized"
+        ]
+    },
+    {
+        "category": "EC2 Types",
+        "question": "Which EC2 instance type is designed for tasks such as gaming, scientific computing, and high-performance computing (HPC)?",
+        "answer": 1,
+        "choices": [
+            "General Purpose",
+            "Compute Optimized",
+            "Memory Optimized",
+            "Accelerated Optimized"
+        ]
+    },
+    {
+        "category": "EC2 Types",
+        "question": "Which EC2 instance type is best for real-time data processing that requires fast access to large datasets?",
+        "answer": 2,
+        "choices": [
+            "General Purpose",
+            "Compute Optimized",
+            "Memory Optimized",
+            "Accelerated Optimized"
+        ]
+    },
+    {
+        "category": "EC2 Types",
+        "question": "Which EC2 instance type is designed for floating point calculations, graphics processing, and data pattern matching?",
+        "answer": 3,
+        "choices": [
+            "Storage Optimized",
+            "Compute Optimized",
+            "Memory Optimized",
+            "Accelerated Optimized"
+        ]
+    },
+    {
+        "category": "EC2 Types",
+        "question": "Which EC2 instance type is optimized for high storage throughput and capacity, such as log processing, backup, and archiving?",
+        "answer": 0,
+        "choices": [
+            "Storage Optimized",
+            "Compute Optimized",
+            "Memory Optimized",
+            "Accelerated Optimized"
+        ]
+    },
+    {
+        "category": "EC2 Pricing Models",
+        "question": "Which EC2 pricing model is ideal for short-term, unpredictable workloads?",
+        "answer": 0,
+        "choices": [
+            "On-demand Instances",
+            "Reserved Instances",
+            "Spot Instances",
+            "Dedicated Instances"
+        ]
+    },
+    {
+        "category": "EC2 Pricing Models",
+        "question": "Which EC2 pricing model is cost-effective for steady-state workloads and comes with long-term contracts (1 or 3 years)?",
+        "answer": 1,
+        "choices": [
+            "On-demand Instances",
+            "Reserved Instances",
+            "Spot Instances",
+            "Dedicated Instances"
+        ]
+    },
+    {
+        "category": "EC2 Pricing Models",
+        "question": "Which EC2 pricing model allows changing instance types during the term and offers long-term contracts with upfront payment?",
+        "answer": 2,
+        "choices": [
+            "On-demand Instances",
+            "Reserved Instances",
+            "Spot Instances",
+            "Dedicated Instances"
+        ]
+    },
+    {
+        "category": "EC2 Pricing Models",
+        "question": "Which EC2 pricing model is a cost-effective option for workloads that are flexible in terms of when they start and end, but come with the risk of interruption?",
+        "answer": 2,
+        "choices": [
+            "On-demand Instances",
+            "Reserved Instances",
+            "Spot Instances",
+            "Dedicated Instances"
+        ]
+    },
+    {
+        "category": "EC2 Pricing Models",
+        "question": "Which EC2 pricing model allows you to run instances on hardware dedicated to a single customer, providing isolation and compliance for sensitive workloads?",
+        "answer": 3,
+        "choices": [
+            "On-demand Instances",
+            "Reserved Instances",
+            "Spot Instances",
+            "Dedicated Instances"
+        ]
+    },
+    {
+        "category": "AWS Free Tier and Support Plans",
+        "question": "Which of the following is an example of Always Free?",
+        "answer": 0,
+        "choices": [
+            "1 million free requests per month for AWS Lambda.",
+            "750 hours per month of t2.micro or t3.micro instances (EC2).",
+            "Free trials for Amazon Redshift or AWS Device Farm.",
+            "5 GB of standard storage with Amazon RDS."
+        ]
+    },
+    {
+        "category": "AWS Free Tier and Support Plans",
+        "question": "Which of the following is an example of Always Free?",
+        "answer": 0,
+        "choices": [
+            "5 GB of Amazon S3 storage.",
+            "750 hours per month of t2.micro or t3.micro instances (EC2).",
+            "Free trials for Amazon Redshift or AWS Device Farm.",
+            "5 GB of standard storage with Amazon RDS."
+        ]
+    },
+    {
+        "category": "AWS Free Tier and Support Plans",
+        "question": "Which of the following is an example of 12-Month Free?",
+        "answer": 1,
+        "choices": [
+            "5 GB of Amazon S3 storage.",
+            "750 hours per month of t2.micro or t3.micro instances (EC2).",
+            "Free trials for Amazon Redshift or AWS Device Farm.",
+            "1 million free requests per month for AWS Lambda."
+        ]
+    },
+    {
+        "category": "AWS Free Tier and Support Plans",
+        "question": "Which of the following is an example of 12-Month Free?",
+        "answer": 1,
+        "choices": [
+            "5 GB of Amazon S3 storage.",
+            "5 GB of standard storage with Amazon RDS.",
+            "Free trials for Amazon Redshift or AWS Device Farm.",
+            "1 million free requests per month for AWS Lambda."
+        ]
+    },
+    {
+        "category": "AWS Free Tier and Support Plans",
+        "question": "Which of the following is an example of Trials?",
+        "answer": 2,
+        "choices": [
+            "5 GB of Amazon S3 storage.",
+            "5 GB of standard storage with Amazon RDS.",
+            "Free trials for Amazon Redshift or AWS Device Farm.",
+            "1 million free requests per month for AWS Lambda."
+        ]
+    },
+    {
+        "category": "AWS Free Tier and Support Plans",
+        "question": "Which AWS support plan is free for all AWS accounts and includes 24/7 access to account and billing support?",
+        "answer": 0,
+        "choices": [
+            "Basic Support",
+            "Developer Support",
+            "Business Support",
+            "Enterprise Support"
+        ]
+    },
+    {
+        "category": "AWS Free Tier and Support Plans",
+        "question": "Which AWS support plan is best for early-stage startups or developers testing AWS services?",
+        "answer": 1,
+        "choices": [
+            "Basic Support",
+            "Developer Support",
+            "Business Support",
+            "Enterprise Support"
+        ]
+    },
+    {
+        "category": "AWS Free Tier and Support Plans",
+        "question": "Which AWS support plan has 24/7 access to Cloud Support Engineers, AWS Trusted Advisor, and AWS Support API at the minimum level?",
+        "answer": 2,
+        "choices": [
+            "Basic Support",
+            "Developer Support",
+            "Business Support",
+            "Enterprise Support"
+        ]
+    },
+    {
+        "category": "AWS Free Tier and Support Plans",
+        "question": "Which AWS support plan has 24/7 access to Senior Cloud Support Engineers, dedicated TAM, and AWS Well Architected reviews?",
+        "answer": 3,
+        "choices": [
+            "Basic Support",
+            "Developer Support",
+            "Business Support",
+            "Enterprise Support"
+        ]
+    },
+    {
+        "category": "Cloud Service Considerations",
+        "question": "How does proximity to cloud regions affect application performance?",
+        "answer": 1,
+        "choices": [
+            "It improves compliance with regulations",
+            "It reduces latency and improves application performance by choosing a region close to your users",
+            "It provides more cost-effective pricing options",
+            "It guarantees the availability of all cloud features"
+        ]
+    },
+    {
+        "category": "Cloud Service Considerations",
+        "question": "What is the main reason for choosing a cloud region close to your users?",
+        "answer": 1,
+        "choices": [
+            "To ensure better compliance with data protection regulations",
+            "To reduce latency and improve application performance",
+            "To access more advanced cloud features and services",
+            "To reduce the overall cost of cloud services"
+        ]
+    },
+    {
+        "category": "Cloud Service Considerations",
+        "question": "Which of the following is not a factor to consider in cloud services for most users?",
+        "answer": 4,
+        "choices": [
+            "Compliance with industry standards and regulations",
+            "Proximity to users to reduce latency and improve performance",
+            "Feature Availability and service offerings to meet their application needs",
+            "Pricing to optimize costs based on workload requirements",
+            "The specific architecture of the cloud provider's data centers"
+        ]
+    },
+    {
+        "category": "Storage Services",
+        "question": "Which of the following is a virtual hard drive for use with EC2 instances?",
+        "answer": 0,
+        "choices": [
+            "Amazon EBS (Elastic Block Storage)",
+            "Amazon EFS (Elastic File System)",
+            "Amazon S3 (Simple Storage Service)",
+            "AWS Storage Gateway"
+        ]
+    },
+    {
+        "category": "Storage Services",
+        "question": "Which of the following is a scalable file storage service for use with AWS Cloud services and on-premises resources?",
+        "answer": 1,
+        "choices": [
+            "Amazon EBS (Elastic Block Storage)",
+            "Amazon EFS (Elastic File System)",
+            "Amazon S3 (Simple Storage Service)",
+            "AWS Storage Gateway"
+        ]
+    },
+    {
+        "category": "Storage Services",
+        "question": "Which of the following is a scalable object storage service designed for storing and retrieving any amount of data?",
+        "answer": 2,
+        "choices": [
+            "Amazon EBS (Elastic Block Storage)",
+            "Amazon EFS (Elastic File System)",
+            "Amazon S3 (Simple Storage Service)",
+            "AWS Storage Gateway"
+        ]
+    },
+    {
+        "category": "Storage Services",
+        "question": "Which of the following is not true for Amazon EBS?",
+        "answer": 1,
+        "choices": [
+            "Data is stored in volumes as blocks.",
+            "Automatically scales.",
+            "Typically used for applications requiring low-latency access to data.",
+            "EBS and EC2 must reside in the same AZ."
+        ]
+    },
+    {
+        "category": "Storage Services",
+        "question": "Which of the following is not true for Amazon EFS?",
+        "answer": 3,
+        "choices": [
+            "It is designed to be accessible by multiple EC2s at the same time.",
+            "It automatically scales.",
+            "It is a regional service.",
+            "It stores data in a single AZ."
+        ]
+    },
+    {
+        "category": "Storage Services",
+        "question": "Which of the following is not an ideal use case for Amazon S3?",
+        "answer": 3,
+        "choices": [
+            "Big data analytics",
+            "Static website hosting",
+            "Storing backups of critical data",
+            "Operating system and application storage"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "Which of the following has the longest retrieval time?",
+        "answer": 2,
+        "choices": [
+            "S3 One Zone-IA",
+            "S3 Glacier Flexible Retrieval",
+            "S3 Glacier Deep Archive",
+            "S3 Standard-IA"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "Which of the following doesn't have retrieval time in milliseconds?",
+        "answer": 1,
+        "choices": [
+            "S3 One Zone-IA",
+            "S3 Glacier Flexible Retrieval",
+            "S3 Standard",
+            "S3 Standard-IA"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "Which of the following is suitable for frequently accessed data?",
+        "answer": 2,
+        "choices": [
+            "S3 One Zone-IA",
+            "S3 Intelligent-Tiering",
+            "S3 Standard",
+            "S3 Standard-IA"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "Which of the following moves data between two access tiers (frequent and infrequent) based on changing access patterns?",
+        "answer": 1,
+        "choices": [
+            "S3 One Zone-IA",
+            "S3 Intelligent-Tiering",
+            "S3 Standard",
+            "S3 Standard-IA"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "Which of the following is suitable for infrequently accessed data but requires rapid retrieval/high availability?",
+        "answer": 3,
+        "choices": [
+            "S3 One Zone-IA",
+            "S3 Intelligent-Tiering",
+            "S3 Standard",
+            "S3 Standard-IA"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "Which of the following is suitable for infrequently accessed data that doesn't require multiple AZ resilience?",
+        "answer": 0,
+        "choices": [
+            "S3 One Zone-IA",
+            "S3 Intelligent-Tiering",
+            "S3 Standard",
+            "S3 Standard-IA"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "Which of the following is suitable for data archiving and long-term backup with retrieval times ranging from mins to hrs?",
+        "answer": 2,
+        "choices": [
+            "S3 One Zone-IA",
+            "S3 Intelligent-Tiering",
+            "S3 Glacier Flexible Retrieval",
+            "S3 Glacier Deep Archive"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "Which of the following is the lowest cost storage class designed for long-term data archiving?",
+        "answer": 3,
+        "choices": [
+            "S3 One Zone-IA",
+            "S3 Intelligent-Tiering",
+            "S3 Glacier Flexible Retrieval",
+            "S3 Glacier Deep Archive"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "A hybrid cloud storage service that enables on-premises applications to seamlessly use AWS cloud storage.",
+        "answer": 0,
+        "choices": [
+            "AWS Storage Gateway",
+            "AWS Backup",
+            "AWS Elastic Disaster Recovery",
+            "Amazon S3 Acceleration"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "A feature of Amazon S3 that speeds up uploads and downloads for large files over long distances.",
+        "answer": 3,
+        "choices": [
+            "AWS Storage Gateway",
+            "AWS Backup",
+            "AWS Elastic Disaster Recovery",
+            "Amazon S3 Acceleration"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "A service designed to minimize downtime and data loss for applications running on AWS.",
+        "answer": 2,
+        "choices": [
+            "Amazon EC2 Fleet",
+            "AWS Backup",
+            "AWS Elastic Disaster Recovery",
+            "Amazon FSx"
+        ]
+    },
+    {
+        "category": "S3 Types",
+        "question": "A file system service that makes it easy to launch and run file systems in the cloud.",
+        "answer": 3,
+        "choices": [
+            "AWS Storage Gateway",
+            "Amazon EC2 Fleet",
+            "AWS Elastic Disaster Recovery",
+            "Amazon FSx"
+        ]
+    },
+    {
+        "category": "AWS Trusted Advisor",
+        "question": "Which AWS management tool helps to reduce costs, increase performance, and improve security by providing real-time guidance?",
+        "answer": 1,
+        "choices": [
+            "AWS CloudFormation",
+            "AWS Trusted Advisor",
+            "AWS Elastic Beanstalk",
+            "AWS CloudTrail"
+        ]
+    },
+    {
+        "category": "AWS Trusted Advisor",
+        "question": "Which of the following is NOT one of the categories AWS Trusted Advisor provides insights into?",
+        "answer": 3,
+        "choices": [
+            "Cost Optimization",
+            "Performance",
+            "Service Limits",
+            "Application Deployment"
+        ]
+    },
+    {
+        "category": "AWS Trusted Advisor",
+        "question": "Which AWS Trusted Advisor recommendation helps to identify underutilized resources to reduce costs?",
+        "answer": 0,
+        "choices": [
+            "Cost Optimization",
+            "Performance",
+            "Service Limits",
+            "Fault Tolerance"
+        ]
+    },
+    {
+        "category": "AWS Trusted Advisor",
+        "question": "Which AWS Trusted Advisor recommendation provides recommendations to improve the performance of AWS resources?",
+        "answer": 1,
+        "choices": [
+            "Cost Optimization",
+            "Performance",
+            "Service Limits",
+            "Security"
+        ]
+    },
+    {
+        "category": "AWS Trusted Advisor",
+        "question": "Which AWS Trusted Advisor recommendation suggests ways to improve the resilience of applications?",
+        "answer": 0,
+        "choices": [
+            "Fault Tolerance",
+            "Performance",
+            "Service Limits",
+            "Security"
+        ]
+    },
+    {
+        "category": "AWS Trusted Advisor",
+        "question": "Service Limits is one of the 5 categories of AWS Trusted Advisor recommendations. Which of the followings is not an example of Service Limits?",
+        "answer": 3,
+        "choices": [
+            "Recommending the right instance types for EC2 based on usage patterns.",
+            "Identifying S3 buckets that don’t have public access settings configured properly.",
+            "Alerting on unused Elastic Load Balancers that can be removed to save costs.",
+            "Providing insights into unused EC2 instances that can be terminated."
+        ]
+    },
+    {
+        "category": "AWS Well-Architected Framework",
+        "question": "\"Attain efficient workload management, derive meaningful insights, and consistently improve supporting processes.\" Which of the following is a pillar of the Well-Architected Framework that aligns with this definition?",
+        "answer": 0,
+        "choices": [
+            "Operational Excellence",
+            "Security",
+            "Performance Efficiency",
+            "Sustainability"
+        ]
+    },
+    {
+        "category": "AWS Well-Architected Framework",
+        "question": "\"Encompasses the protection of data, systems, and assets while delivering business value. (Monitor, alert, audit actions and changes).\" Which of the following is a pillar of the Well-Architected Framework that aligns with this definition?",
+        "answer": 1,
+        "choices": [
+            "Operational Excellence",
+            "Security",
+            "Reliability",
+            "Sustainability"
+        ]
+    },
+    {
+        "category": "AWS Well-Architected Framework",
+        "question": "\"Consistently and accurately perform intended functions.\" Which of the following is a pillar of the Well-Architected Framework that aligns with this definition?",
+        "answer": 2,
+        "choices": [
+            "Performance Efficiency",
+            "Security",
+            "Reliability",
+            "Sustainability"
+        ]
+    },
+    {
+        "category": "AWS Well-Architected Framework",
+        "question": "\"Utilize computing resources effectively to meet system requirements. (Deploy globally in minutes)\" Which of the following is a pillar of the Well-Architected Framework that aligns with this definition?",
+        "answer": 0,
+        "choices": [
+            "Performance Efficiency",
+            "Operational Excellence",
+            "Reliability",
+            "Sustainability"
+        ]
+    },
+    {
+        "category": "AWS Well-Architected Framework",
+        "question": "\"Focuses on avoiding unnecessary costs and maximizing return on investment. (Analyze and attribute expenditures)\" Which of the following is a pillar of the Well-Architected Framework that aligns with this definition?",
+        "answer": 0,
+        "choices": [
+            "Cost Optimization",
+            "Operational Excellence",
+            "Reliability",
+            "Sustainability"
+        ]
+    },
+    {
+        "category": "AWS Well-Architected Framework",
+        "question": "\"Optimize your workloads to minimize their environmental impact while ensuring efficient resource use and operational resilience.\" Which of the following is a pillar of the Well-Architected Framework that aligns with this definition?",
+        "answer": 3,
+        "choices": [
+            "Performance Efficiency",
+            "Operational Excellence",
+            "Reliability",
+            "Sustainability"
+        ]
+    },
+    {
+        "category": "AWS Well-Architected Framework",
+        "question": "A service that allows you to review and improve your workloads based on the best practices outlined in the Well-Architected Framework.",
+        "answer": 0,
+        "choices": [
+            "AWS Well-Architected Tool",
+            "AWS Trusted Advisor",
+            "AWS Elastic Beanstalk",
+            "AWS CloudFormation"
+        ]
+    },
+    {
+        "category": "AWS Cloud Adoption Framework",
+        "question": "\"Aligns cloud adoption with business goals, helping stakeholders understand benefits and ROI. (e.g. Product management)\" Which of the following perspectives of the Cloud Adoption Framework best matches this definition?",
+        "answer": 0,
+        "choices": [
+            "Business Perspective",
+            "Operations Perspective",
+            "Governance Perspective",
+            "Platform Perspective"
+        ]
+    },
+    {
+        "category": "AWS Cloud Adoption Framework",
+        "question": "\"Focuses on organizational change management, training, and skill development to support cloud adoption.\" Which of the following perspectives of the Cloud Adoption Framework best matches this definition?",
+        "answer": 2,
+        "choices": [
+            "Business Perspective",
+            "Operations Perspective",
+            "People Perspective",
+            "Platform Perspective"
+        ]
+    },
+    {
+        "category": "AWS Cloud Adoption Framework",
+        "question": "\"Establishes policies, controls, and compliance frameworks to manage risk and ensure governance in the cloud. (e.g. Application portfolio management)\" Which of the following perspectives of the Cloud Adoption Framework best matches this definition?",
+        "answer": 0,
+        "choices": [
+            "Governance Perspective",
+            "Operations Perspective",
+            "Business Perspective",
+            "Platform Perspective"
+        ]
+    },
+    {
+        "category": "AWS Cloud Adoption Framework",
+        "question": "\"Involves the technical aspects, such as architecture and integration, to optimize performance and security.\" Which of the following perspectives of the Cloud Adoption Framework best matches this definition?",
+        "answer": 3,
+        "choices": [
+            "Governance Perspective",
+            "Operations Perspective",
+            "Security Perspective",
+            "Platform Perspective"
+        ]
+    },
+    {
+        "category": "AWS Cloud Adoption Framework",
+        "question": "\"Emphasizes the importance of security best practices and compliance throughout the cloud journey. (e.g. IAM)\" Which of the following perspectives of the Cloud Adoption Framework best matches this definition?",
+        "answer": 2,
+        "choices": [
+            "Governance Perspective",
+            "Operations Perspective",
+            "Security Perspective",
+            "Platform Perspective"
+        ]
+    },
+    {
+        "category": "AWS Cloud Adoption Framework",
+        "question": "\"Ensures readiness, including monitoring, incident response, and ongoing management of cloud resources. (e.g. Performance and capacity management, implementing governance frameworks, etc.)\" Which of the following perspectives of the Cloud Adoption Framework best matches this definition?",
+        "answer": 1,
+        "choices": [
+            "Governance Perspective",
+            "Operations Perspective",
+            "Business Perspective",
+            "Platform Perspective"
+        ]
+    },
+    {
+        "category": "Cloud Migration Strategies (6 Rs)",
+        "question": "\"Quick migration of legacy applications to reduce on-premises infrastructure costs.\" Which of the following strategy of the Cloud Migration Strategies best matches this use case?",
+        "answer": 0,
+        "choices": [
+            "Rehosting (Lift and Shift)",
+            "Replatforming (Lift, Tinker, and Shift)",
+            "Refactoring",
+            "Repurchasing"
+        ]
+    },
+    {
+        "category": "Cloud Migration Strategies (6 Rs)",
+        "question": "\"Migrating a database to Amazon RDS while keeping the application largely intact.\" Which of the following strategy of the Cloud Migration Strategies best matches this use case?",
+        "answer": 1,
+        "choices": [
+            "Rehosting (Lift and Shift)",
+            "Replatforming (Lift, Tinker, and Shift)",
+            "Refactoring",
+            "Repurchasing"
+        ]
+    },
+    {
+        "category": "Cloud Migration Strategies (6 Rs)",
+        "question": "\"Breaking a monolithic application into microservices for improved agility and scalability.\" Which of the following strategy of the Cloud Migration Strategies best matches this use case?",
+        "answer": 2,
+        "choices": [
+            "Rehosting (Lift and Shift)",
+            "Replatforming (Lift, Tinker, and Shift)",
+            "Refactoring (Re-architecting)",
+            "Repurchasing"
+        ]
+    },
+    {
+        "category": "Cloud Migration Strategies (6 Rs)",
+        "question": "\"Switching from an on-premises CRM to a cloud-based CRM solution like Salesforce.\" Which of the following strategy of the Cloud Migration Strategies best matches this use case?",
+        "answer": 3,
+        "choices": [
+            "Rehosting (Lift and Shift)",
+            "Replatforming (Lift, Tinker, and Shift)",
+            "Refactoring (Re-architecting)",
+            "Repurchasing"
+        ]
+    },
+    {
+        "category": "Cloud Migration Strategies (6 Rs)",
+        "question": "\"Phasing out obsolete applications to streamline operations and reduce costs.\" Which of the following strategy of the Cloud Migration Strategies best matches this use case?",
+        "answer": 0,
+        "choices": [
+            "Retiring",
+            "Retaining",
+            "Refactoring (Re-architecting)",
+            "Repurchasing"
+        ]
+    },
+    {
+        "category": "Cloud Migration Strategies (6 Rs)",
+        "question": "\"Maintaining regulatory compliance for specific applications that cannot move to the cloud yet.\" Which of the following strategy of the Cloud Migration Strategies best matches this use case?",
+        "answer": 1,
+        "choices": [
+            "Retiring",
+            "Retaining",
+            "Refactoring (Re-architecting)",
+            "Repurchasing"
+        ]
+    },
+    {
+        "category": "Shared Responsibility Model",
+        "question": "Which of the following is a responsibility of AWS?",
+        "answer": 0,
+        "choices": [
+            "The physical security of AWS facilities",
+            "Defining network firewalls inside the VPC",
+            "Patch the guest OS",
+            "Updating the database engine"
+        ]
+    },
+    {
+        "category": "Shared Responsibility Model",
+        "question": "Which of the following is a responsibility of AWS?",
+        "answer": 0,
+        "choices": [
+            "Patching and updating the hypervisor",
+            "Defining network firewalls inside the VPC",
+            "Patch the guest OS",
+            "Updating the database engine"
+        ]
+    },
+    {
+        "category": "Shared Responsibility Model",
+        "question": "Which of the following is a responsibility of AWS?",
+        "answer": 0,
+        "choices": [
+            "Maintains the configuration of its infrastructure devices",
+            "Defining network firewalls inside the VPC",
+            "Data protection (at rest – Customer Side Encryption)",
+            "Updating the database engine"
+        ]
+    },
+    {
+        "category": "Shared Responsibility Model",
+        "question": "Which of the following is a responsibility of AWS?",
+        "answer": 0,
+        "choices": [
+            "AWS API endpoints",
+            "Configure an EC2 instance",
+            "Data protection (at rest – Customer Side Encryption)",
+            "Updating the database engine"
+        ]
+    },
+    {
+        "category": "Shared Responsibility Model",
+        "question": "Which of the following is a responsibility of the user?",
+        "answer": 1,
+        "choices": [
+            "AWS API endpoints",
+            "Configure an EC2 instance",
+            "Training data center staff",
+            "Decommission deprecated storage devices"
+        ]
+    },
+    {
+        "category": "Shared Responsibility Model",
+        "question": "Which of the following is a responsibility of the user?",
+        "answer": 1,
+        "choices": [
+            "The physical security of AWS facilities",
+            "Training company employees",
+            "Training data center staff",
+            "Decommission deprecated storage devices"
+        ]
+    },
+    {
+        "category": "Shared Responsibility Model",
+        "question": "Which of the following is a responsibility of the user?",
+        "answer": 1,
+        "choices": [
+            "AWS API endpoints",
+            "Updating the OS",
+            "The physical security of AWS facilities",
+            "Patching and updating the hypervisor"
+        ]
+    },
+    {
+        "category": "Shared Responsibility Model",
+        "question": "Which of the following is a responsibility of the user?",
+        "answer": 1,
+        "choices": [
+            "Maintains the configuration of its infrastructure devices",
+            "Updating the database engine",
+            "Data protection (at rest – Server Side Encryption, in transit)",
+            "Patching and updating the hypervisor"
+        ]
+    }
+
+    
+]

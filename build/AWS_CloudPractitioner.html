@@ -1,0 +1,979 @@
+<html>
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    
+</head>
+
+<body class="c18 c35 doc-content">
+    <h2 class="c12" id="h.fivsn5e26zf6"><span class="c9">Introduction</span></h2>
+    <p class="c1"><strong class="c0">Cloud Computing:</strong><span class="c4">&nbsp;O</span><span class="c2">n-demand
+            delivery of IT resources and applications through the Internet with pay as you go pricing model. </span></p>
+    <p class="c1"><span class="c0">Benefits of Cloud Computing are as follows</span><span class="c2">:</span></p>
+    <ul class="c13 lst-kix_94ciwnyiajuu-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c2">Pay as you go</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Don&rsquo;t worry about capacity constraints</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Low latency</span></li>
+    </ul>
+    <p class="c1"><span class="c0">Cloud Computing deployment models are as follows</span><span class="c2">:</span></p>
+    <ul class="c13 lst-kix_l1ssvggbdu7p-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c2">Cloud-based</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">On-premises/Private cloud</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Hybrid</span></li>
+    </ul>
+    <p class="c1"><span class="c0">Amazon EC2 (Elastic Compute Cloud):</span><span class="c2">&nbsp;A virtual server
+            that provides scalable computing capacity.</span></p>
+    <p class="c1"><span class="c0">Multitenancy:</span><span class="c2">&nbsp;Sharing underlying hardware among multiple
+            virtual machines (VMs).</span></p>
+    <p class="c1"><span class="c0">ELB (Elastic Load Balancing)</span><span class="c2">: Automatically distributes
+            incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, and IP
+            addresses. Works with auto-scaling groups to adjust capacity based on demand.</span></p>
+    <p class="c1"><span class="c0">Loosely coupled architecture</span><span class="c4">: Each service is independent
+            (microservices approach), preventing cascading failures from a single point of failure. </span><span
+            class="c0">Queues</span><span class="c2">&nbsp;help manage communication between services.</span></p>
+    <p class="c1"><span class="c0">Tightly coupled components</span><span class="c2">: All components are
+            interconnected, making the system vulnerable to failures (monolithic application)</span></p>
+    <h2 class="c12" id="h.vefyosyr4qxi"><span>Application Integration</span></h2>
+    <p class="c1"><span class="c0">Amazon SQS (Simple Queue Service)</span><span class="c2">: Enables you to send,
+            store, and receive messages between software components at any volume, facilitating decoupled
+            communication.</span></p>
+    <p class="c1"><span class="c0">Amazon SNS (Simple Notification Service)</span><span class="c4">: A </span><span
+            class="c0">pub/sub</span><span class="c2">&nbsp;(publish/subscribe) messaging service that allows you to
+            send notifications to multiple subscribers, such as web servers, email addresses, and AWS Lambda
+            functions.</span></p>
+    <p class="c1"><span class="c0">Amazon EventBridge</span><span class="c2">: A serverless event bus service that
+            facilitates the integration of applications using events. It allows for real-time event processing and helps
+            decouple microservices, making it easier to build scalable and responsive applications.</span></p>
+    <p class="c1"><span class="c0">AWS Step Functions</span><span class="c2">: A serverless orchestration service that
+            enables you to coordinate multiple AWS services into serverless workflows.</span></p>
+    <h2 class="c12" id="h.k9694qmfsrkr"><span class="c9">EC2</span></h2>
+    <h3 class="c28" id="h.swpyctmbzimx"><span class="c14">EC2 Instance Types </span></h3>
+    <p class="c1"><span class="c2">Key components are CPU, memory, storage, and networking.</span></p>
+    <ul class="c13 lst-kix_6ued6wo8ftqy-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c0">General Purpose</span><span class="c2">: Ideal for web servers
+                and code repositories.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Compute Optimized</span><span class="c2">: Best for gaming,
+                scientific computing, HPC (High Performing Computing).</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Memory Optimized</span><span class="c2">: Suited for
+                memory-intensive applications such as: </span></li>
+    </ul>
+    <ul class="c13 lst-kix_6ued6wo8ftqy-1 start">
+        <li class="c1 c30 li-bullet-0"><span class="c4">In-memory Databases (e.g., </span><span class="c2">Redis or
+                Memcached), </span></li>
+        <li class="c1 c30 li-bullet-0"><span class="c4">High-Performance Databases (e.g., </span><span class="c2">Amazon
+                Aurora), </span></li>
+        <li class="c1 c30 li-bullet-0"><span class="c4">Real-time Data Processing</span><span class="c2">: Systems that
+                require fast access to large datasets (e.g., streaming applications)</span></li>
+    </ul>
+    <ul class="c13 lst-kix_6ued6wo8ftqy-0">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Accelerated Optimized</span><span class="c2">: Designed for
+                floating point calculations, graphics processing, data pattern matching.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Storage Optimized</span><span class="c4">: Optimized for high
+                storage throughput and capacity such as: log processing, backup and archiving, content distribution,
+                d</span><span class="c4">ata warehousing</span><span class="c4">: Analytics platforms that require high
+                storage throughput (e.g., Amazon Redshift).</span></li>
+    </ul>
+    <h3 class="c20" id="h.i92gaig8bd4"><span class="c14">EC2 Pricing Models</span><span class="c16 c19">:</span></h3>
+    <ul class="c13 lst-kix_3h0qbi33ubpr-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c0">On-demand Instances</span><span class="c4">: </span><span
+                class="c0">Default</span><span class="c4">&nbsp;purchasing option. Ideal for </span><span
+                class="c0">short-term</span><span class="c2">, unpredictable workloads.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Reserved Instances</span><span class="c4">: Long-term contracts
+                (</span><span class="c0">1 or 3 years</span><span class="c2">) with upfront payment. </span></li>
+    </ul>
+    <ul class="c13 lst-kix_3h0qbi33ubpr-1 start">
+        <li class="c1 c30 li-bullet-0"><span class="c2">Standard: Cost-effective for steady-state workloads.</span></li>
+        <li class="c1 c30 li-bullet-0"><span class="c2">Convertible: Allows changing instance types during the
+                term.</span></li>
+    </ul>
+    <ul class="c13 lst-kix_3h0qbi33ubpr-0">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Spot Instances</span><span class="c4">: A cost-effective option
+                for running workloads that are </span><span class="c0">flexible in terms of when they start and
+                end</span><span class="c4">, but they come with the risk of being </span><span
+                class="c0">interrupted</span><span class="c4">. Available at </span><span class="c0">up to 90% off the
+                On-demand price</span><span class="c4">. You specify the maximum. price you&rsquo;re willing to pay. If
+                your bid meets or exceeds the current Spot price, your instance runs. </span><span class="c0">No
+                long-term commitment</span><span class="c2">; access to unused EC2 capacity. Ideal for applications such
+                as batch processing, data analysis, or development/testing environments.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Dedicated Instances</span><span class="c4">: Run in VPCs (Virtual
+                Private Clouds) on </span><span class="c0">hardware dedicated to a single customer</span><span
+                class="c2">. Provides isolation and compliance for sensitive workloads.</span></li>
+    </ul>
+    <p class="c1"><span class="c0">Amazon EC2 Fleet</span><span class="c4">:</span><span class="c2">&nbsp;A service that
+            enables you to provision and manage a fleet of EC2 instances across different instance types and purchasing
+            options (On-Demand, Spot, and Reserved Instances) to optimize for cost and performance.</span></p>
+    <h2 class="c12" id="h.o4tshuy1mlz9"><span class="c9">AWS Free Tier and Support Plans</span></h2>
+    <h3 class="c36" id="h.aijl2vx5q7j3"><span class="c24 c14">AWS Free Tier</span></h3>
+    <p class="c1"><span class="c2">The AWS Free Tier provides free access to a limited amount of AWS resources after
+            signing up for an account. It includes three types of offers:</span></p>
+    <ol class="c13 lst-kix_jaj2rhad77c5-0 start" start="1">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Always Free</span><span class="c2">: These offers are available
+                to all AWS users and do not expire after 12 months. Examples include:</span></li>
+    </ol>
+    <ul class="c13 lst-kix_jaj2rhad77c5-1 start">
+        <li class="c8 li-bullet-0"><span class="c2">1 million free requests per month for AWS Lambda.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">5 GB of Amazon S3 storage.</span></li>
+    </ul>
+    <ol class="c13 lst-kix_jaj2rhad77c5-0" start="2">
+        <li class="c26 c5 li-bullet-0"><span class="c0">12-Month Free</span><span class="c2">: These offers are
+                available for 12 months after you sign up. Examples include:</span></li>
+    </ol>
+    <ul class="c13 lst-kix_jaj2rhad77c5-1 start">
+        <li class="c8 li-bullet-0"><span class="c2">750 hours per month of t2.micro or t3.micro instances (EC2).</span>
+        </li>
+        <li class="c8 li-bullet-0"><span class="c2">5 GB of standard storage with Amazon RDS.</span></li>
+    </ul>
+    <ol class="c13 lst-kix_jaj2rhad77c5-0" start="3">
+        <li class="c26 c5 li-bullet-0"><span class="c0">Trials</span><span class="c2">: These are short-term trials that
+                provide free usage for a limited time, often for specific services. For example:</span></li>
+    </ol>
+    <ul class="c13 lst-kix_jaj2rhad77c5-1 start">
+        <li class="c8 li-bullet-0"><span class="c2">Free trials for Amazon Redshift or AWS Device Farm.</span></li>
+    </ul>
+    <h3 class="c32" id="h.pe7jhpmmfb7q"><span class="c24 c14">AWS Support Plans</span></h3>
+    <p class="c1"><span class="c2">AWS offers several support plans that cater to different levels of service and
+            support needs:</span></p>
+    <ol class="c13 lst-kix_y8irhy4jurxs-0 start" start="1">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Basic Support</span><span class="c2">:</span></li>
+    </ol>
+    <ul class="c13 lst-kix_y8irhy4jurxs-1 start">
+        <li class="c8 li-bullet-0"><span class="c2">Free for all AWS accounts.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Access to customer service and documentation.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">24/7 access to account and billing support.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Limited technical support.</span></li>
+    </ul>
+    <ol class="c13 lst-kix_y8irhy4jurxs-0" start="2">
+        <li class="c26 c5 li-bullet-0"><span class="c0">Developer Support</span><span class="c2">:</span></li>
+    </ol>
+    <ul class="c13 lst-kix_y8irhy4jurxs-1 start">
+        <li class="c8 li-bullet-0"><span class="c2">Monthly fee based on usage (starting at $29).</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Business hours access to Cloud Support Associates.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Best for early-stage startups or developers testing AWS
+                services.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Guidance on best practices and architecture.</span></li>
+    </ul>
+    <ol class="c13 lst-kix_y8irhy4jurxs-0" start="3">
+        <li class="c26 c5 li-bullet-0"><span class="c0">Business Support</span><span class="c2">:</span></li>
+    </ol>
+    <ul class="c13 lst-kix_y8irhy4jurxs-1 start">
+        <li class="c8 li-bullet-0"><span class="c2">Monthly fee based on usage (starting at $100).</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">24/7 access to Cloud Support Engineers.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Support for production workloads.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Access to AWS Trusted Advisor and AWS Support API.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Response times of under one hour for urgent issues.</span></li>
+    </ul>
+    <ol class="c13 lst-kix_y8irhy4jurxs-0" start="4">
+        <li class="c26 c5 li-bullet-0"><span class="c0">Enterprise Support</span><span class="c2">:</span></li>
+    </ol>
+    <ul class="c13 lst-kix_y8irhy4jurxs-1 start">
+        <li class="c8 li-bullet-0"><span class="c2">Monthly fee based on usage (starting at $15,000).</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">24/7 access to senior Cloud Support Engineers.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Dedicated Technical Account Manager (TAM).</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Proactive guidance and support for mission-critical
+                workloads.</span></li>
+        <li class="c8 li-bullet-0"><span class="c2">Access to AWS Well-Architected reviews and architecture
+                support.</span></li>
+    </ul>
+    <h3 class="c1" id="h.qwj3dyf60m23"><span class="c14 c24">Key Features of Each Support Plan</span></h3>
+    <ul class="c13 lst-kix_95kxv32eozoi-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Basic</span><span class="c2">: Customer service, account
+                support.</span></li>
+        <li class="c5 c26 li-bullet-0"><span class="c0">Developer</span><span class="c2">: Business hours support, best
+                practice guidance.</span></li>
+        <li class="c26 c5 li-bullet-0"><span class="c0">Business</span><span class="c2">: 24/7 support, access to tools
+                like Trusted Advisor, faster response times.</span></li>
+        <li class="c26 c5 li-bullet-0"><span class="c0">Enterprise</span><span class="c2">: Senior engineer access,
+                dedicated TAM, proactive support and architecture reviews.</span></li>
+    </ul>
+    <h2 class="c12" id="h.u1ddf1ahtgtt"><span class="c9">Factors to Consider in Cloud Services</span></h2>
+    <ul class="c13 lst-kix_cvofvk9r5188-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Compliance</span><span class="c2">: Ensure that the cloud
+                provider meets industry standards and regulations relevant to your business (e.g., GDPR, HIPAA).
+                Compliance is crucial for data protection and legal requirements.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Proximity/Latency</span><span class="c2">: Choose a cloud region
+                close to your users to reduce latency and improve application performance. Consider the geographical
+                distribution of your user base and the impact on response times.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Feature Availability</span><span class="c2">: Evaluate the
+                features and services offered by the cloud provider. Ensure that the necessary tools, APIs, and services
+                are available to meet your application needs.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Pricing</span><span class="c2">: Analyze the pricing models and
+                overall costs associated with the cloud services. Consider different pricing options (e.g., On-Demand,
+                Reserved, Spot) to optimize costs based on your workload requirements.</span></li>
+    </ul>
+    <h2 class="c12" id="h.8v4414hoh45t"><span class="c9">AWS Infrastructure Overview</span></h2>
+    <p class="c1"><span class="c0">AWS Global Infrastructure</span><span class="c2">: The overall architecture
+            comprising Regions, AZs, Edge Locations, and Local Zones that enables redundancy and fault tolerance.</span>
+    </p>
+    <p class="c1"><span class="c0">Regions</span><span class="c4">: Geographically isolated areas that consist of 3 or
+            more Availability Zones. E.g. </span><span class="c4 c11">us-east-1 (Northern VA)</span></p>
+    <p class="c1"><span class="c0">Local Zones</span><span class="c4">: Extensions of Regions that place compute,
+            storage, and database services closer to end-users for applications that require low latency. E.g.
+        </span><span class="c11 c4">us-east-1-ash-1 (Ashburn, VA)</span></p>
+    <p class="c1"><span class="c0">AZ (Availability Zone)</span><span class="c4">: A single or a group of data centers
+            within a Region. Each AZ is fully isolated from others, ensuring fault tolerance and high availability
+            within the AWS infrastructure. E.g. </span><span class="c11 c4">us-east-1a</span></p>
+    <p class="c1"><span class="c0">Edge Locations</span><span class="c4">: A site that CloudFront uses to cache copies.
+            Part of the AWS global network that delivers content closer to users, primarily used for services like
+            Amazon CloudFront. E.g. </span><span class="c11 c4">IAD (Dulles, VA)</span></p>
+    <p class="c1"><span class="c0">AWS </span><span class="c0">Wavelength</span><span class="c4">: A service that brings
+            AWS services to the edge of the 5G network, enabling low-latency applications. E.g. </span><span
+            class="c4 c23">wavelength-us-east-1</span></p>
+    <h2 class="c12" id="h.zgy447u1kr6r"><span class="c9">Compute Services</span></h2>
+    <p class="c1"><span class="c0">AWS Batch</span><span class="c2">: A service that enables you to run batch computing
+            jobs on AWS easily and efficiently.</span></p>
+    <p class="c1"><span class="c0">AWS Elastic Beanstalk</span><span class="c2">: A managed service that simplifies web
+            infrastructure management for deploying and scaling applications. You provide the code and configuration
+            settings, and it handles:</span></p>
+    <ul class="c13 lst-kix_s5k4fc6uf1ot-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c2">Capacity adjustments</span></li>
+        <li class="c26 c5 li-bullet-0"><span class="c2">Load balancing</span></li>
+        <li class="c26 c5 li-bullet-0"><span class="c2">Auto-scaling</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Application health monitoring</span></li>
+    </ul>
+    <p class="c1"><span class="c0">Amazon Lightsail</span><span class="c2">: A simplified cloud platform that provides
+            virtual private servers for hosting applications. It offers a straightforward interface and predictable
+            pricing, making it ideal for small businesses and developers looking for an easy entry into cloud
+            computing.</span></p>
+    <p class="c1"><span class="c0">AWS Outposts</span><span class="c4">: Enables you to run AWS services </span><span
+            class="c0">in your own data center</span><span class="c2">, providing a hybrid cloud solution.</span></p>
+    <h2 class="c12" id="h.kyhn3wjr6vc"><span>Container Services</span></h2>
+    <p class="c1"><span class="c0">Amazon ECS (Elastic Container Service)</span><span class="c4">: Supports </span><span
+            class="c0">Docker</span><span class="c2">&nbsp;containers, allowing you to easily deploy and manage
+            containerized applications.</span></p>
+    <p class="c1"><span class="c0">Amazon ECR (Elastic Container Registry)</span><span class="c2">: A fully managed
+            Docker container registry that makes it easy to store, manage, and deploy Docker container images.</span>
+    </p>
+    <p class="c1"><span class="c0">Amazon EKS (Elastic Kubernetes Service)</span><span class="c4">: Manages </span><span
+            class="c0">Kubernetes</span><span class="c2">&nbsp;for running containerized applications, providing a fully
+            managed Kubernetes experience.</span></p>
+    <p class="c1"><span class="c0">AWS Fargate</span><span class="c4">: A </span><span class="c0">serverless</span><span
+            class="c2">&nbsp;compute engine for containers that allows you to run containers without managing the
+            underlying infrastructure.</span></p>
+    <p class="c1"><span class="c0">AWS Porter Network</span><span class="c2">: A managed service that simplifies the
+            process of deploying and managing containerized applications using Kubernetes.</span></p>
+    <p class="c1"><span class="c0">AWS App Runner</span><span class="c2">: A service that simplifies the process of
+            deploying containerized web applications and APIs. You provide your container image (either from Amazon ECR
+            or a source code repository), and it handles the underlying infrastructure, scaling, and load balancing. It
+            abstracts away much of the complexity associated with running containerized applications.</span></p>
+    <p class="c1"><span class="c0">AWS A2C (</span><span class="c0">App2Container</span><span class="c0">)</span><span
+            class="c4">: A service designed to simplify the process of modernizing and containerizing existing
+            applications.</span></p>
+    <h2 class="c12" id="h.484gncvdprg"><span class="c9">Developer Tools</span></h2>
+    <p class="c1"><span class="c0">AWS AppConfig</span><span class="c2">: A service for managing application
+            configurations in a safe and controlled manner.</span></p>
+    <p class="c1"><span class="c0">AWS CLI (Command Line Interface)</span><span class="c2">: A tool that allows you to
+            manage your AWS services from the command line.</span></p>
+    <p class="c1"><span class="c0">AWS Cloud9</span><span class="c2">: Cloud-based integrated development environment
+            (IDE) for writing, running, and debugging code.</span></p>
+    <p class="c1"><span class="c0">AWS CloudShell</span><span class="c2">: A browser-based shell environment that
+            provides a convenient way for users to interact with AWS resources without needing to configure a local
+            development environment.</span></p>
+    <p class="c1"><span class="c0">AWS CodeArtifact</span><span class="c2">: A fully managed artifact repository service
+            that makes it easy to store, publish, and share software packages used in your application development. It
+            supports multiple package formats, including Maven, npm, and PyPI.</span></p>
+    <p class="c1"><span class="c0">AWS CodeBuild</span><span class="c2">: A fully managed build service that compiles
+            source code, runs tests, and produces software packages ready for deployment. It scales continuously and
+            allows you to run builds in parallel.</span></p>
+    <p class="c1"><span class="c0">AWS CodeCommit</span><span class="c4">: A fully managed </span><span
+            class="c0">source control service</span><span class="c2">&nbsp;that provides secure Git repositories for
+            version control of source code and other assets.</span></p>
+    <p class="c1"><span class="c0">AWS CodeDeploy</span><span class="c2">: Automates code deployments to various compute
+            services, including EC2 and Lambda.</span></p>
+    <p class="c1"><span class="c0">AWS CodePipeline</span><span class="c4">: A </span><span class="c0">CI/CD</span><span
+            class="c4">&nbsp;(continuous integration and continuous delivery) </span><span
+            class="c0">service</span><span class="c2">&nbsp;for automating application release processes. Manages the
+            movement of code between individual services.</span></p>
+    <p class="c1"><span class="c0">AWS CodeStar</span><span class="c4">: A unified </span><span class="c0">user
+            interface</span><span class="c2">&nbsp;that helps you manage your software development activities, making it
+            easier to develop, build, and deploy applications on AWS. Integrates with CodeCommit, CodeBuild, and
+            CodePipeline for a complete CI/CD experience.</span></p>
+    <p class="c1"><span class="c0">AWS X-Ray</span><span class="c2">: Service for debugging and analyzing microservices
+            applications.</span></p>
+    <p class="c1"><span class="c0">AWS Amplify</span><span class="c2">: Development platform for building mobile and web
+            applications with CI/CD support.</span></p>
+    <p class="c1"><span class="c0">AWS Device Farm</span><span class="c2">: Testing service for mobile and web
+            applications on real devices in the cloud.</span></p>
+    <p class="c1"><span class="c0">AWS AppSync</span><span class="c2">: It is used to create, manage, and secure GraphQL
+            APIs. The GraphQL APIs securely query or update data from multiple databases in the AWS Cloud.</span></p>
+    <p class="c1"><span class="c0">AWS Lambda</span><span class="c4">: A </span><span class="c0">serverless</span><span
+            class="c4">&nbsp;computing service that lets you </span><span class="c0">run code in response to
+            events</span><span class="c2">&nbsp;without provisioning or managing servers, enabling event-driven
+            architectures.</span></p>
+    <p class="c1"><span class="c0">AWS QuickStarts</span><span class="c2">: Automated solutions for deploying workloads
+            quickly into the AWS environment, following best practices.</span></p>
+    <p class="c1"><span class="c0">AWS OpsWorks</span><span class="c2">: A configuration management service that
+            provides managed instances of Chef and Puppet (configuration management tools).</span></p>
+    <p class="c1"><span class="c0">AWS SAM (Serverless Application Model)</span><span class="c2">: Framework for
+            building serverless applications.</span></p>
+    <p class="c1"><span class="c0">AWS CDK (Cloud Development Kit)</span><span class="c2">: Framework for defining cloud
+            infrastructure using programming languages.</span></p>
+    <p class="c1"><span class="c0">AWS SDK</span><span class="c2">: Users can programmatically access AWS services with
+            an API from the programming languages of their choice. This toolkit provides libraries and tools that
+            simplify the process of integrating AWS services into applications, enabling developers to automate tasks
+            and manage resources effectively.</span></p>
+    <h2 class="c12" id="h.4o99fwdbj5bt"><span class="c9">Other Application Services</span></h2>
+    <p class="c1"><span class="c0">Amazon Connect</span><span class="c2">: A cloud-based contact center service that
+            enables businesses to provide customer support.</span></p>
+    <p class="c1"><span class="c0">Amazon Simple Email Service (Amazon SES)</span><span class="c2">: An email sending
+            service designed to help businesses and developers send marketing, notification, and transactional emails.
+        </span></p>
+    <p class="c1"><span class="c0">Amazon AppStream 2.0</span><span class="c4">: It</span><span class="c2">&nbsp;is an
+            application streaming service and provides instant access to your desktop applications from anywhere.</span>
+    </p>
+    <p class="c1"><span class="c0">AWS WorkSpaces</span><span class="c2">: It can run a managed desktop-as-a-service
+            (DaaS) solution that allows users to provision and manage virtual desktops in the cloud.</span></p>
+    <p class="c1"><span class="c0">AWS Ground Station</span><span class="c2">: It is used to control satellite
+            communications, process satellite data, and scale satellite operations.</span></p>
+    <h2 class="c12" id="h.njofa4ls337g"><span class="c9">Networking and Content Delivery</span></h2>
+    <p class="c1"><span class="c0">Amazon API Gateway</span><span class="c2">: A fully managed service for creating,
+            publishing, and managing APIs at any scale.</span></p>
+    <p class="c1"><span class="c0">AWS CloudFront</span><span class="c4">: A CDN (</span><span class="c0">content
+            delivery network</span><span class="c4">) that stores </span><span class="c0">cached copies</span><span
+            class="c2">&nbsp;of content to accelerate delivery to users. Shield Standard exists on CloudFront.</span>
+    </p>
+    <p class="c1"><span class="c0">Amazon VPC (Virtual Private Cloud)</span><span class="c2">: Provides logical
+            isolation and segmentation of your resources, giving you control over network traffic.</span></p>
+    <p class="c1"><span class="c0">AWS VPN (Virtual Private Network)</span><span class="c2">: It enables secure and
+            private connections between your on-premises networks or client devices and your Amazon VPC. </span></p>
+    <p class="c1"><span class="c0">Virtual Private Gateway</span><span class="c2">: A component that enables
+            connectivity between your Virtual Private Cloud (VPC) and external networks. Functions similarly to a
+            router.</span></p>
+    <p class="c1"><span class="c0">AWS Direct Connect</span><span class="c2">: A secure, dedicated physical connection
+            between your on-premises data center and your Amazon VPC for improved bandwidth and reduced latency.
+            However, data is not encrypted.</span></p>
+    <p class="c1"><span class="c0">Amazon Global Accelerator</span><span class="c2">: A networking service that improves
+            the availability and performance of applications with global users.</span></p>
+    <p class="c1"><span class="c0">Security Group (for EC2 instances)</span><span class="c2">: Stateful (have memory),
+            by default it denies all inbound traffic and allows all outbound traffic. Like a door attendant at an event
+            who checks guests&rsquo; IDs before allowing entry but remembers who has been allowed in so doesn&rsquo;t
+            ask for ID say, when a guest uses the restroom and comes back. </span></p>
+    <p class="c1"><span class="c0">Network ACL (for subnets)</span><span class="c2">: Stateless. Think of it Like a
+            passport control officer, where each entry and exit is checked independently, regardless of previous
+            interactions.</span></p>
+    <p class="c1"><span class="c0">Amazon Route 53</span><span class="c4">: A scalable DNS (Domain Name System) web
+            service that provides reliable and cost-effective domain name registration, DNS routing, and health checking
+            for your applications. It translates user-friendly domain names into IP addresses. Shield Standard exists on
+            Route 53. It can help detect an outage of website servers and redirect users to alternate servers.</span>
+    </p>
+    <h2 class="c12" id="h.vpvrexz79d6"><span class="c9">Storage Services</span></h2>
+    <h3 class="c28" id="h.vsjbago9mdr5"><span class="c14">Amazon EBS (Elastic Block Storage)</span><span
+            class="c19 c16">: </span></h3>
+    <p class="c1"><span class="c2">A virtual hard drive for use with EC2 instances, providing block-level storage.
+            &nbsp;</span></p>
+    <p class="c1"><span class="c4">Key Features</span><span class="c2">:</span></p>
+    <ul class="c13 lst-kix_x38n74cttaqi-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c4">Data is </span><span class="c0">stored in volumes as
+                blocks</span><span class="c2">.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Does not automatically scale</span><span class="c2">.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Typically used for applications requiring low-latency access to
+                data.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">EBS and EC2 must reside in the same AZ.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">EBS snapshots back up data incrementally.</span></li>
+    </ul>
+    <h3 class="c28" id="h.8pt8k8fmm5m7"><span class="c14">Amazon EFS (Elastic File System):</span><span
+            class="c19 c16">&nbsp;</span></h3>
+    <p class="c1"><span class="c2">A scalable file storage service for use with AWS Cloud services and on-premises
+            resources. </span></p>
+    <p class="c1"><span class="c4">Key Features</span><span class="c2">:</span></p>
+    <ul class="c13 lst-kix_8bflnt44i04o-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c2">Regional service </span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Automatically scales</span><span class="c2">&nbsp;based on
+                storage needs.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Stores data in and across multiple AZs for high availability and
+                durability.</span></li>
+    </ul>
+    <h3 class="c28" id="h.m9w9geeh69xe"><span class="c14">Amazon S3 (Simple Storage Service)</span><span
+            class="c19 c16">: </span></h3>
+    <p class="c1"><span class="c4">A </span><span class="c0">scalable</span><span class="c2">&nbsp;object storage
+            service designed for storing and retrieving any amount of data. Each object must be less than 5TB of
+            data.</span></p>
+    <p class="c1"><span class="c2">Key Features:</span></p>
+    <ul class="c13 lst-kix_oj038k39ebrw-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c4">Data is </span><span class="c0">stored as objects in
+                buckets</span><span class="c2">, making it suitable for a wide range of use cases, including backups,
+                big data analytics, and static website hosting.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Accessed over HTTP/HTTPS, ideal for high durability and
+                availability but with higher latency compared to EBS.</span></li>
+    </ul>
+    <p class="c1"><span class="c0">Bucket versioning</span><span class="c4">: It</span><span class="c2">&nbsp;gives you
+            the ability to maintain multiple versions of an object in an S3 bucket. Therefore, if you accidentally
+            delete or overwrite an object, Amazon S3 does not remove the object permanently. Instead, Amazon S3 inserts
+            a delete marker for the object in buckets with versioning turned on. This feature gives you the ability to
+            restore previous versions of every object that is stored in the bucket.</span></p>
+    <p class="c1"><span class="c0">Amazon S3 Acceleration</span><span class="c2">: A feature of Amazon S3 that
+            accelerates uploads and downloads for large files over long distances.</span></p>
+    <h4 class="c32 c38" id="h.z1mjj7ybq9dx"><span class="c17 c29">S3 Types</span><span class="c2">:</span></h4>
+    <ul class="c13 lst-kix_4pm6bfau98dc-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c0">S3 Standard</span><span class="c4">: High durability,
+                availability, and performance for </span><span class="c0">frequently accessed data. Use
+                Cases</span><span class="c4">: Websites, mobile applications, data analytics, and content distribution.
+            </span><span class="c0">Retrieval Time</span><span class="c2">: Milliseconds. The data is stored in at least
+                3 AZs.</span></li>
+    </ul>
+    <p class="c1 c22"><span class="c2"></span></p>
+    <ul class="c13 lst-kix_4pm6bfau98dc-0">
+        <li class="c1 c5 li-bullet-0"><span class="c0">S3 Intelligent-Tiering</span><span class="c4">: Automatically
+            </span><span class="c0">moves data between</span><span class="c4">&nbsp;two access tiers (</span><span
+                class="c0">frequent and infrequent</span><span class="c4">) based on changing access patterns.
+            </span><span class="c0">Use Cases</span><span class="c4">: Data with unpredictable access patterns, such as
+                analytics and archives. </span><span class="c0">Retrieval Time</span><span class="c2">: Milliseconds. If
+                an object is not accessed for 30 days, it is moved from Standard to Standard-IA. </span></li>
+    </ul>
+    <p class="c1 c22"><span class="c2"></span></p>
+    <ul class="c13 lst-kix_4pm6bfau98dc-0">
+        <li class="c1 c5 li-bullet-0"><span class="c0">S3 Standard-IA (Infrequent Access)</span><span class="c4">:
+                Lower-cost option for data that is </span><span class="c0">infrequently accessed but requires rapid
+                retrieval/high availability</span><span class="c4">. </span><span class="c0">Use Cases</span><span
+                class="c4">: Backup data, disaster recovery, and long-term storage of data not accessed regularly.
+            </span><span class="c0">Retrieval Time</span><span class="c2">: Milliseconds.</span></li>
+    </ul>
+    <p class="c1 c22"><span class="c2"></span></p>
+    <ul class="c13 lst-kix_4pm6bfau98dc-0">
+        <li class="c1 c5 li-bullet-0"><span class="c0">S3 One Zone-IA</span><span class="c4">: Lower-cost option for
+                infrequently accessed data that does not require multiple AZ resilience. </span><span class="c0">Use
+                Cases</span><span class="c4">: Storing secondary backup copies, or data that can be recreated easily.
+            </span><span class="c0">Retrieval Time</span><span class="c2">: Milliseconds.</span></li>
+    </ul>
+    <p class="c1 c22"><span class="c2"></span></p>
+    <ul class="c13 lst-kix_4pm6bfau98dc-0">
+        <li class="c1 c5 li-bullet-0"><span class="c0">S3 Glacier Flexible Retrieval</span><span class="c4">: Low-cost
+                storage for </span><span class="c0">data archiving and long-term backup</span><span
+                class="c4">&nbsp;with retrieval times ranging from minutes to hours. </span><span class="c0">Use
+                Cases</span><span class="c4">: Archiving data, compliance data retention, and digital media archives.
+            </span><span class="c0">Retrieval Time</span><span class="c2">: Minutes to hours (depends on retrieval
+                option)</span></li>
+    </ul>
+    <p class="c1 c22"><span class="c2"></span></p>
+    <ul class="c13 lst-kix_4pm6bfau98dc-0">
+        <li class="c1 c5 li-bullet-0"><span class="c0">S3 Glacier Deep Archive</span><span class="c4">: The lowest-cost
+                storage class designed for long-term data archiving. </span><span class="c0">Use Cases</span><span
+                class="c4">: Long-term archiving for compliance or data retention needs. </span><span
+                class="c0">Retrieval Time</span><span class="c2">: 12 Hours </span></li>
+    </ul>
+    <p class="c1"><span class="c0">AWS Storage Gateway</span><span class="c2">: A hybrid cloud storage service that
+            enables on-premises applications to seamlessly use AWS cloud storage.</span></p>
+    <p class="c1"><span class="c0">AWS Backup</span><span class="c2">: A centralized backup service that automates the
+            backup of AWS services and on-premises resources.</span></p>
+    <p class="c1"><span class="c0">AWS Elastic Disaster Recovery (DRS)</span><span class="c2">: A service designed to
+            minimize downtime and data loss for applications running on AWS. It enables quick recovery of applications
+            in case of a failure.</span></p>
+    <p class="c1"><span class="c0">Amazon FSx</span><span class="c4">: A file system service that makes it easy to
+            launch and run file systems in the cloud. It offers different types of file systems, including FSx for
+            Windows File Server and FSx for </span><span class="c4">Lustre</span><span class="c2">.</span></p>
+    <h2 class="c12" id="h.u6amsn2a8thk"><span class="c9">Database Services</span></h2>
+    <p class="c1"><span class="c0">Amazon RDS</span><span class="c2">: Managed service for relational databases with
+            support for six engines: PostgreSQL, MySQL, MariaDB, Oracle, MS SQL Server, Amazon Aurora)</span></p>
+    <p class="c1"><span class="c0">Amazon Aurora</span><span class="c4">: A MySQL and PostgreSQL-compatible relational
+            database that is serverless and auto scalable, with multi-region support. </span><span class="c0">Use
+            Cases</span><span class="c2">: Online transaction processing (OLTP), Applications requiring fast, reliable
+            database performance</span></p>
+    <p class="c1"><span class="c0">Amazon DynamoDB</span><span class="c4">: A fully managed, serverless, NoSQL database
+            service that offers single-digit millisecond performance at any scale. </span><span class="c0">Use
+            Cases</span><span class="c2">: Mobile backends, Gaming applications, IoT applications</span></p>
+    <p class="c1"><span class="c0">Amazon DynamoDB Accelerator (DAX)</span><span class="c4">: An in-memory caching
+            service for DynamoDB that improves response times from milliseconds to microseconds. </span><span
+            class="c0">Use Cases</span><span class="c2">: Gaming leaderboards, Real-time analytics</span></p>
+    <p class="c1"><span class="c0">Amazon MemoryDB for Redis</span><span class="c2">: A Redis-compatible in-memory
+            database service designed for applications requiring microsecond read and low single-digit millisecond write
+            latencies. It is built for high availability and durability, making it suitable for caching, session
+            storage, and real-time analytics.</span></p>
+    <p class="c1"><span class="c0">Amazon DocumentDB</span><span class="c4">: Fully managed document database service
+            that is compatible with MongoDB. </span><span class="c0">Use Cases</span><span class="c2">: Contents,
+            catalogs, user profiles</span></p>
+    <p class="c1"><span class="c0">Amazon Neptune</span><span class="c4">: A fully managed </span><span
+            class="c0">graph</span><span class="c4">&nbsp;database service. </span><span class="c0">Use
+            Cases</span><span class="c2">: Social media connections, Fraud detection, Recommendation engines,
+            etc.</span></p>
+    <p class="c1"><span class="c0">Amazon QLDB (Quantum Ledger DB)</span><span class="c4">: A fully managed ledger
+            database that provides a transparent, immutable, and cryptographically verifiable transaction log.
+        </span><span class="c0">Use Cases</span><span class="c2">: Supply chain tracking, Financial transactions
+            auditing, Documenting ownership history</span></p>
+    <p class="c1"><span class="c0">Amazon Managed Blockchain</span><span class="c4">: A fully managed service that makes
+            it easy to create and manage scalable blockchain networks. </span><span class="c0">Use Cases</span><span
+            class="c2">: Cryptocurrency applications, Supply chain management, Digital asset management</span></p>
+    <p class="c1"><span class="c0">Amazon Elasticache</span><span class="c2">: An in-memory caching service supporting
+            Redis and Memcached, designed to improve application performance.</span></p>
+    <p class="c1"><span class="c0">Amazon Timestream</span><span class="c2">: A time-series database designed for
+            storing and analyzing time-stamped data, such as metrics, events, and logs for IoT and operational
+            applications (DevOp). It can store and analyze trillions of events per day.</span></p>
+    <p class="c1"><span class="c0">Amazon Keyspaces</span><span class="c2">: A scalable, managed database service
+            compatible with Apache Cassandra, designed for industrial applications focused on equipment
+            maintenance.</span></p>
+    <p class="c1"><span class="c0">AWS Database Migration Service (DMS)</span><span class="c2">: A service that helps
+            you migrate databases to AWS quickly and securely.</span></p>
+    <h2 class="c12" id="h.ybsbo1t8t3d9"><span class="c9">Analytics</span></h2>
+    <p class="c1"><span class="c0">Amazon Athena</span><span class="c2">: An interactive query service that enables you
+            to analyze data directly in Amazon S3 using standard SQL. </span></p>
+    <p class="c1"><span class="c0">AWS Data Exchange</span><span class="c2">: A service that facilitates the sharing and
+            monetization of third-party data sets.</span></p>
+    <p class="c1"><span class="c0">Amazon EMR (Elastic MapReduce)</span><span class="c2">: A cloud big data platform
+            that allows you to process vast amounts of data quickly and cost-effectively.</span></p>
+    <p class="c1"><span class="c0">AWS Glue</span><span class="c2">: A fully managed extract, transform, load (ETL)
+            service that simplifies data preparation for analytics, machine learning, and application development. It
+            allows users to easily discover, catalog, and transform data from various sources and prepare it for
+            analysis.</span></p>
+    <p class="c1"><span class="c0">Amazon Kinesis</span><span class="c2">: A platform for real-time data streaming and
+            processing.</span></p>
+    <p class="c1"><span class="c0">Amazon OpenSearch Service</span><span class="c2">: A managed service that simplifies
+            the deployment, operation, and scaling of OpenSearch and Elasticsearch clusters in the cloud. It allows
+            users to search, analyze, and visualize data in real time, making it ideal for various applications like log
+            analytics, full-text search, and real-time application monitoring.</span></p>
+    <p class="c1"><span class="c0">Amazon QuickSight</span><span class="c2">: A fully scalable business intelligence
+            service that enables users to create interactive visual dashboards and insights from their data.</span></p>
+    <p class="c1"><span class="c0">Amazon Redshift</span><span class="c4">: A fully managed, petabyte-scale data
+            warehousing service for big data analytics. </span><span class="c0">Use Cases</span><span class="c2">:
+            Business intelligence and reporting, Data lakes and large-scale analytics, ETL (extract, transform, load)
+            processing</span></p>
+    <h2 class="c12" id="h.ouvtsg2ycyb2"><span class="c9">Customer Engagement</span></h2>
+    <p class="c1"><span class="c0">AWS Support</span><span class="c2">: It provides a range of services to help
+            customers effectively use AWS resources.</span></p>
+    <p class="c1"><span class="c0">AWS Activate for Startups</span><span class="c2">: Offers access to credits,
+            technical support, training, and a variety of resources to help startups accelerate their development and
+            go-to-market strategies.</span></p>
+    <p class="c1"><span class="c0">AWS IQ</span><span class="c2">: A marketplace where AWS customers can connect with
+            AWS Certified experts for project-based work.</span></p>
+    <p class="c1"><span class="c0">AWS Managed Services (AMS)</span><span class="c2">: AMS helps automate operational
+            tasks, provides proactive monitoring, and enables governance and compliance.</span></p>
+    <h2 class="c12" id="h.wjbneer8yzho"><span class="c9">Migration and Transfer</span></h2>
+    <p class="c1"><span class="c0">AWS Application Discovery Service</span><span class="c2">: A service that helps plan
+            migrations to AWS by collecting data about on-premises application dependencies and usage.</span></p>
+    <p class="c1"><span class="c0">AWS Application Migration Service (MGN)</span><span class="c2">: It is a fully
+            managed service designed to simplify and accelerate the migration of applications from on-premises data
+            centers to AWS. (lift &amp; shift servers)</span></p>
+    <p class="c1"><span class="c0">AWS Migration Evaluator</span><span class="c2">: A tool designed to help
+            organizations assess their on-premises workloads and create a business case for migrating to AWS.</span></p>
+    <p class="c1"><span class="c0">AWS Migration Hub</span><span class="c4">:</span><span class="c0">&nbsp;</span><span
+            class="c2">It provides a single location to track the progress of application migrations across multiple AWS
+            and partner solutions.</span></p>
+    <p class="c1"><span class="c0">AWS Schema Conversion Tool (SCT)</span><span class="c2">: It helps you convert your
+            database schema from one database engine to another, facilitating database migrations to AWS.</span></p>
+    <p class="c1"><span class="c0">AWS Transfer Family</span><span class="c2">: A fully managed service that simplifies
+            the process of transferring files into and out of Amazon S3 and Amazon EFS using standard protocols such as
+            SFTP, FTPS, FTP, etc. </span></p>
+    <h3 class="c20" id="h.vkc9x1owe7lt"><span class="c29">Data Migration Strategies</span></h3>
+    <p class="c1"><span class="c16 c17">AWS Snow Family</span><span class="c2">: A suite of physical devices designed to
+            help customers securely and efficiently move large amounts of data to and from AWS. It includes:</span></p>
+    <ul class="c13 lst-kix_okb3g7tblsgj-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c0">AWS Snowcone</span><span class="c4">: A small, portable device
+                that has </span><span class="c4 c18">two vCPUs, 4 GB of memory, and 8 TB of HDD or 14 TB of SSD based
+                storage</span><span class="c2">.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">AWS Snowball</span><span class="c2">: </span></li>
+    </ul>
+    <ul class="c13 lst-kix_okb3g7tblsgj-1 start">
+        <li class="c1 c30 li-bullet-0"><span class="c2">Storage Optimized: A larger device that has 40 vCPUs, 80 GB of
+                memory, and 80 TB of HDD or 1TB of SSD based storage.</span></li>
+        <li class="c1 c30 li-bullet-0"><span class="c2">Compute Optimized: A larger device that has 104 vCPUs, 416 GB of
+                memory, and 80 TB of HDD or 28TB of SSD based storage.</span></li>
+    </ul>
+    <ul class="c13 lst-kix_okb3g7tblsgj-0">
+        <li class="c1 c5 li-bullet-0"><span class="c0">AWS Snowmobile</span><span class="c2">: A physical truck that can
+                transfer exabytes of data (up to 100 PB per Snowmobile).</span></li>
+    </ul>
+    <p class="c1"><span class="c0">AWS DataSync</span><span class="c2">: It is a data transfer service that automates
+            moving data between storage systems and services.</span></p>
+    <p class="c1"><span class="c2">DataSync is ideal for automated transfers over the network, while the Snow Family is
+            focused on large-scale physical data migration.</span></p>
+    <h2 class="c12" id="h.dkdae5amc6up"><span class="c9">AI and Machine Learning Services</span></h2>
+    <p class="c1"><span class="c0">Amazon Comprehend</span><span class="c2">: A natural language processing (NLP)
+            service that uses machine learning to analyze text for insights and sentiment.</span></p>
+    <p class="c1"><span class="c0">Amazon Kendra</span><span class="c2">: An intelligent search service powered by
+            machine learning that allows organizations to easily search for information across various data sources. It
+            is designed to provide accurate and relevant search results, enabling users to find the information they
+            need quickly.</span></p>
+    <p class="c1"><span class="c0">Amazon Lex</span><span class="c2">: A service for building conversational interfaces
+            using voice and text, powered by the same technology as Alexa. It is used for chatbots, virtual assistants,
+            and customer support applications.</span></p>
+    <p class="c1"><span class="c0">Amazon Polly</span><span class="c4">: A </span><span
+            class="c0">text-to-speech</span><span class="c2">&nbsp;service that converts text into lifelike speech,
+            supporting multiple languages and voices.</span></p>
+    <p class="c1"><span class="c0">Amazon Transcribe</span><span class="c4">: A </span><span
+            class="c0">speech-to-text</span><span class="c2">, automatic speech recognition (ASR), service that converts
+            spoken language into text. It is used for transcribing customer service calls, generating subtitles for
+            videos, and creating searchable audio content.</span></p>
+    <p class="c1"><span class="c0">Amazon Rekognition</span><span class="c2">: A computer vision service that can
+            analyze images and videos to identify objects, people, text, scenes, and activities. It is used for image
+            and video analysis, security and surveillance, and facial recognition.</span></p>
+    <p class="c1"><span class="c0">Amazon SageMaker</span><span class="c2">: A fully managed service that provides tools
+            for building, training, and deploying ML models at scale.</span></p>
+    <p class="c1"><span class="c0">Amazon Textract</span><span class="c2">: A service that automatically extracts text,
+            handwriting, and data from scanned documents.</span></p>
+    <p class="c1"><span class="c0">Amazon Translate</span><span class="c2">: A neural machine translation service that
+            delivers fast, high-quality language translation.</span></p>
+    <p class="c1"><span class="c0">Amazon Personalize</span><span class="c2">: A machine learning service that makes it
+            easy to add personalized recommendations to applications. It is used for product recommendations, content
+            personalization, and dynamic web experiences.</span></p>
+    <p class="c1"><span class="c0">Amazon Forecast</span><span class="c2">: A time-series forecasting service that uses
+            machine learning to deliver accurate forecasts.</span></p>
+    <h2 class="c12" id="h.kr8qgtrflkii"><span class="c9">Security, Identity, and Compliance</span></h2>
+    <p class="c1"><span class="c0">AWS IAM (Identity and Access Management)</span><span class="c2">: A service that
+            enables you to manage access to AWS resources securely. You can create and manage AWS users and groups, and
+            use permissions to allow or deny their access to AWS resources.</span></p>
+    <p class="c1"><span class="c0">Key Concepts</span><span class="c2">:</span></p>
+    <ul class="c13 lst-kix_5z7r3g5ii7if-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Root User</span><span class="c2">: The initial account created,
+                has full access to all resources.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">User</span><span class="c2">: An individual with specific
+                permissions. Users can be assigned roles and policies.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Policy</span><span class="c2">: A document (in JSON format) that
+                defines permissions; grants or denies actions on resources.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Groups</span><span class="c2">: Collections of users that share
+                the same permissions.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Roles</span><span class="c2">: Temporary access permissions that
+                can be assumed by users or AWS services.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">MFA (Multi-Factor Authentication)</span><span class="c2">: An
+                additional security layer requiring two or more verification methods for user access.</span></li>
+    </ul>
+    <p class="c1"><span class="c0">AWS Artifact</span><span class="c2">: A service that provides on-demand access to AWS
+            compliance reports and allows you to manage agreements with AWS. </span></p>
+    <p class="c1"><span class="c0">Sub-services</span><span class="c2">:</span></p>
+    <ul class="c13 lst-kix_ko8i3v1jevb7-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Agreements</span><span class="c2">: Manage and review online
+                agreements, such as the AWS Customer Agreement and Business Associate Addendum.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Reports</span><span class="c2">: Access a variety of compliance
+                reports, including SOC, ISO, PCI, and others, to ensure your compliance posture.</span></li>
+    </ul>
+    <p class="c1"><span class="c0">AWS Audit Manager</span><span class="c2">: A fully managed service that helps
+            organizations streamline the process of auditing their AWS usage, ensuring compliance with various
+            regulatory standards and internal policies. </span></p>
+    <p class="c1"><span class="c0">AWS Resource Access Manager (RAM)</span><span class="c2">: It gives you the ability
+            to share AWS resources with any AWS account within AWS Organization.</span></p>
+    <p class="c1"><span class="c0">AWS Key Management Service</span><span class="c4">: A managed service that simplifies
+            the creation and control of encryption keys used to </span><span class="c0">encrypt your data</span><span
+            class="c2">.</span></p>
+    <p class="c1"><span class="c0">AWS Secrets Manager</span><span class="c2">: A service that stores, retrieves, and
+            manages secrets (e.g., API keys, passwords).</span></p>
+    <p class="c1"><span class="c0">AWS Certificate Manager (ACM)</span><span class="c2">: A service that simplifies the
+            management of SSL/TLS certificates.</span></p>
+    <p class="c1"><span class="c0">AWS CloudHSM</span><span class="c2">: A service that provides hardware security
+            modules (HSM) in the cloud for secure key management.</span></p>
+    <p class="c1"><span class="c0">Amazon Cognito</span><span class="c2">: A user authentication and management service
+            that allows developers to add sign-up, sign-in, and access control to web and mobile applications. </span>
+    </p>
+    <p class="c1"><span class="c0">AWS Directory Service</span><span class="c2">: A managed service that provides
+            directory services (single sign-on, user management, integration with Active Directory) for AWS applications
+            and resources.</span></p>
+    <p class="c1"><span class="c0">AWS WAF (Web Application Firewall)</span><span class="c2">: A security service that
+            monitors and filters incoming web traffic to protect web applications from common web exploits.</span></p>
+    <p class="c1"><span class="c0">AWS Shield</span><span class="c2">: A managed DDoS protection service that safeguards
+            applications.</span></p>
+    <p class="c1"><span class="c0">AWS Network Firewall</span><span class="c2">: &nbsp;A managed service that provides
+            robust network security for Amazon VPC.</span></p>
+    <p class="c1"><span class="c0">AWS Firewall Manager</span><span class="c2">: A security management service that
+            simplifies the administration of firewall rules across your AWS organization. It helps you manage AWS WAF
+            rules and AWS Shield settings centrally.</span></p>
+    <p class="c1"><span class="c0">Amazon Inspector</span><span class="c4">: A service that automatically scans for
+            vulnerabilities and deviations from security best practices. Provides detailed reports on potential security
+            issues. Primarily targets vulnerabilities within Amazon EC2 instances and their configurations. Think of it
+            as a &ldquo;</span><span class="c0">Building Inspector</span><span class="c2">&rdquo;: It scans your
+            applications and EC2 instances to find security vulnerabilities and compliance issues, just like a building
+            inspector checks for problems in a building.</span></p>
+    <p class="c1"><span class="c0">Amazon GuardDuty</span><span class="c2">: A threat detection service that
+            continuously monitors for malicious activity and unauthorized behavior. Monitors AWS account activity, VPC
+            flow logs, and DNS logs in real-time. Generates security findings and alerts based on detected anomalies or
+            suspicious behavior.</span></p>
+    <p class="c1"><span class="c4">Think of it as a &ldquo;</span><span class="c0">Security Guard</span><span
+            class="c2">&rdquo;: It monitors your AWS environment for suspicious activity, like a security guard watching
+            for intruders or unusual behavior.</span></p>
+    <p class="c1"><span class="c0">AWS Security Hub</span><span class="c2">: Collects and prioritizes findings from AWS
+            services like GuardDuty, Inspector, and WAF. </span></p>
+    <p class="c1"><span class="c0">Amazon Detective</span><span class="c2">: A service that simplifies the process of
+            investigating security issues across AWS workloads. It collects and analyzes log data from multiple sources,
+            helping security teams understand and respond to security incidents.</span></p>
+    <p class="c1"><span class="c0">Amazon Macie</span><span class="c4">: A security service that uses machine learning
+            to automatically discover, classify, and protect sensitive data in Amazon S3. </span><span class="c0">Use
+            Cases</span><span class="c2">: Data privacy compliance (GDPR, HIPAA)</span></p>
+    <h2 class="c12" id="h.qqof8ixfvpka"><span class="c9">Management and Governance</span></h2>
+    <p class="c1"><span class="c0">AWS Auto Scaling</span><span class="c4">:</span><span class="c0">&nbsp;</span><span
+            class="c2">A service that automatically adjusts the capacity of your AWS resources to maintain performance
+            and optimize costs.</span></p>
+    <p class="c1"><span class="c0">AWS CloudFormation</span><span class="c4">: A service for modeling and setting up AWS
+            resources using </span><span class="c0">templates</span><span class="c2">, enabling repeatable and
+            consistent environment setup. Templates are written in JSON or YAML.</span></p>
+    <p class="c1"><span class="c0">AWS CloudTrail</span><span class="c2">: A service that enables governance,
+            compliance, and operational and risk auditing of your AWS account by logging all API calls and user
+            activities. It includes actions that users take through the console, SDKs, API calls, and the AWS
+            CLI.</span></p>
+    <p class="c1"><span class="c0">Amazon CloudWatch</span><span class="c2">: A monitoring service for AWS cloud
+            resources and applications. It provides data and insights to help you understand and manage performance and
+            operational health. </span></p>
+    <p class="c1"><span class="c0">Key Features</span><span class="c2">:</span></p>
+    <ul class="c13 lst-kix_1cve45dnpq6e-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Metrics</span><span class="c2">: Collects and tracks metrics from
+                AWS services, providing visibility into performance.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Logs</span><span class="c2">: Allows you to monitor and store
+                logs from various AWS services and applications.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Alarms</span><span class="c2">: Set up alarms to trigger actions
+                (e.g., notifications) based on specified thresholds for metrics.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Dashboards</span><span class="c2">: Create custom dashboards to
+                visualize metrics and logs in real-time.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Events</span><span class="c2">: Use Amazon CloudWatch Events to
+                respond to changes in your AWS resources.</span></li>
+    </ul>
+    <p class="c1"><span class="c2">For example, it tracks API request latency in an AWS Lambda function and logs the
+            performance data. Or monitors EC2 instance CPU utilization and sets alarms for high usage.</span></p>
+    <p class="c1"><span class="c0">AWS Compute Optimizer</span><span class="c2">: A service that recommends optimal AWS
+            resources (cost optimization, performance improvement, resource allocation) for your workloads based on
+            utilization patterns.</span></p>
+    <p class="c1"><span class="c0">AWS Config</span><span class="c2">: A service that enables you to assess, audit, and
+            evaluate the configurations of your AWS resources and tracks AWS resource configurations over time. For
+            example, a company uses AWS Config if it needs to audit its AWS resources and document any changes.</span>
+    </p>
+    <p class="c1"><span class="c0">AWS Organizations: </span><span class="c2">Allows you to centrally manage and govern
+            multiple AWS accounts. It helps in implementing policies, managing billing, automating account creation, and
+            security.</span></p>
+    <p class="c1"><span class="c0">AWS Control Tower</span><span class="c2">: It provides a way to create and manage a
+            multi-account environment that follows AWS best practices.</span></p>
+    <p class="c1"><span class="c0">AWS Health Dashboard</span><span class="c2">: It gives you the ability to see the
+            status and health of all AWS services. The dashboard also shows reported service-related events for services
+            across AWS Regions.</span></p>
+    <p class="c1"><span class="c0">AWS Management Console</span><span class="c4">: It</span><span
+            class="c0">&nbsp;</span><span class="c2">gives users the ability to interact with AWS services through a web
+            user interface.</span></p>
+    <p class="c1"><span class="c0">AWS Launch Wizard</span><span class="c2">: A service that simplifies the deployment
+            of AWS resources based on your specific application needs.</span></p>
+    <p class="c1"><span class="c0">AWS License Manager</span><span class="c2">: A service that helps you manage and
+            track software licenses from various vendors across AWS and on-premises environments.</span></p>
+    <p class="c1"><span class="c0">AWS Resource Groups and Tag Editor</span><span class="c4">:</span><span
+            class="c0">&nbsp;</span><span class="c4">A service that allows you to manage and organize your AWS resources
+            efficiently.</span></p>
+    <p class="c1"><span class="c0">AWS Resource Groups</span><span class="c2">: </span></p>
+    <p class="c1"><span class="c0">Organization</span><span class="c2">: Group resources by shared tags or criteria for
+            easier management.</span></p>
+    <p class="c1"><span class="c0">Management</span><span class="c2">: Perform bulk actions on groups of
+            resources.</span></p>
+    <p class="c1"><span class="c0">Tag Editor</span><span class="c2">:</span></p>
+    <p class="c1"><span class="c0">Tag Management</span><span class="c2">: Create and manage tags across multiple
+            resources.</span></p>
+    <p class="c1"><span class="c0">Search and Filter</span><span class="c4">: Easily find resources based on
+            tags.</span></p>
+    <p class="c1"><span class="c0">AWS Service Catalog</span><span class="c2">: It gives IT administrators the ability
+            to create, manage, and distribute portfolios of approved products to end users.</span></p>
+    <p class="c1"><span class="c0">AWS Systems Manager Session Manager</span><span class="c2">: It is a fully managed
+            service that provides secure and auditable management of EC2 instances and on-premises servers without the
+            need for SSH or RDP access. It provides a secure connection through shell scripting. You can establish the
+            connection without the need to open ports.</span></p>
+    <h2 class="c12" id="h.1mv1sz6bjowg"><span>AWS Trusted Advisor</span><span class="c2">&nbsp;</span></h2>
+    <p class="c1"><span class="c2">A management tool that provides real-time guidance to help you reduce costs, increase
+            performance, and improve security. It offers insights across five categories:</span></p>
+    <p class="c1"><span class="c0">Cost Optimization</span><span class="c2">: Identifies underutilized or idle resources
+            to help reduce costs.</span></p>
+    <p class="c1"><span class="c0">Performance</span><span class="c2">: Provides recommendations to improve the
+            performance of your AWS resources.</span></p>
+    <p class="c1"><span class="c0">Security</span><span class="c2">: Highlights security best practices, such as
+            enabling MFA and reviewing access keys.</span></p>
+    <p class="c1"><span class="c0">Fault Tolerance</span><span class="c2">: Suggests ways to improve the resilience of
+            your applications.</span></p>
+    <p class="c1"><span class="c0">Service Limits</span><span class="c2">: Monitors usage against service limits to
+            prevent resource constraints.</span></p>
+    <p class="c1"><span class="c2">Some examples are as follows:</span></p>
+    <ul class="c13 lst-kix_izfbtvv0e9zd-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c2">Recommending the right instance types for EC2 based on usage
+                patterns.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Identifying S3 buckets that don&rsquo;t have public access
+                settings configured properly.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Alerting on unused Elastic Load Balancers that can be removed to
+                save costs.</span></li>
+    </ul>
+    <h2 class="c15" id="h.3zb59lclmcex"><span class="c9">AWS Well-Architected Framework </span></h2>
+    <p class="c1"><span class="c2">A set of best practices designed to help cloud architects build secure,
+            high-performing, resilient, and efficient infrastructure for applications.</span></p>
+    <ol class="c13 lst-kix_7go4469gpy61-0 start" start="1">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Operational Excellence</span><span class="c2">: Achieve effective
+                workload management, gain valuable insights, and continuously enhance supporting processes. (Perform
+                operations as code)</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Security</span><span class="c2">: Encompasses the protection of
+                data, systems, and assets while delivering business value. (Monitor, alert, audit actions and
+                changes)</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Reliability</span><span class="c2">: Consistently and accurately
+                perform intended functions.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Performance Efficiency</span><span class="c2">: Utilize computing
+                resources effectively to meet system requirements. (Deploy globally in minutes)</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Cost Optimization</span><span class="c2">: Focuses on avoiding
+                unnecessary costs and maximizing return on investment. (Analyze and attribute expenditures)</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Sustainability</span><span class="c2">: Optimize your workloads
+                to minimize their environmental impact while ensuring efficient resource use and operational
+                resilience.</span></li>
+    </ol>
+    <p class="c1"><span class="c0">AWS Well-Architected Tool</span><span class="c2">: A service that allows you to
+            review and improve your workloads based on the best practices outlined in the Well-Architected
+            Framework.</span></p>
+    <h2 class="c15" id="h.2f2drqkncjj0"><span class="c9">AWS CAF (Cloud Adoption Framework)</span></h2>
+    <p class="c1"><span class="c2">A structured approach that provides guidance across multiple dimensions to ensure a
+            comprehensive and effective cloud migration and utilization. There are 6 key perspectives:</span></p>
+    <p class="c1"><span class="c0">Business Perspective</span><span class="c2">: Aligns cloud adoption with business
+            goals, helping stakeholders understand benefits and ROI. (e.g. Product management)</span></p>
+    <p class="c1"><span class="c0">People Perspective</span><span class="c2">: Focuses on organizational change
+            management, training, and skill development to support cloud adoption.</span></p>
+    <p class="c1"><span class="c0">Governance Perspective</span><span class="c2">: Establishes policies, controls, and
+            compliance frameworks to manage risk and ensure governance in the cloud. (e.g. Application portfolio
+            management)</span></p>
+    <p class="c1"><span class="c0">Platform Perspective</span><span class="c2">: Involves the technical aspects, such as
+            architecture and integration, to optimize performance and security.</span></p>
+    <p class="c1"><span class="c0">Security Perspective</span><span class="c2">: Emphasizes the importance of security
+            best practices and compliance throughout the cloud journey. (e.g. IAM)</span></p>
+    <p class="c1"><span class="c0">Operations Perspective</span><span class="c2">: Ensures operational readiness,
+            including monitoring, incident response, and ongoing management of cloud resources.</span></p>
+    <p class="c1"><span class="c2">Some examples are as follows:</span></p>
+    <ul class="c13 lst-kix_ch4ntuf5chr4-0 start">
+        <li class="c1 c5 li-bullet-0"><span class="c2">Assessing current IT capabilities and identifying gaps in skills
+                for effective cloud management.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Developing a roadmap for cloud migration that aligns with
+                business objectives.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Implementing governance frameworks to ensure compliance with
+                industry regulations.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c2">Performance and capacity management </span></li>
+    </ul>
+    <h2 class="c15" id="h.xd29myo9890"><span>Cloud </span><span class="c9">Migration Strategies (6 Rs)</span></h2>
+    <p class="c1"><span class="c2">As its name suggests, it refers to the various approaches organizations can take to
+            move applications, data, and workloads from on-premises environments to the cloud. Here are the primary
+            strategies:</span></p>
+    <ol class="c13 lst-kix_5xejdinv4b1i-0 start" start="1">
+        <li class="c1 c5 li-bullet-0"><span class="c0">Rehosting (Lift and Shift)</span><span class="c4">: Move
+                applications to the cloud with minimal changes, essentially &ldquo;lifting&rdquo; them from on-premises
+                and &ldquo;shifting&rdquo; them to the cloud. </span><span class="c0">Use Case</span><span class="c2">:
+                Quick migration of legacy applications to reduce on-premises infrastructure costs.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Replatforming (Lift, Tinker, and Shift)</span><span class="c16">:
+            </span><span class="c4">Make a few optimizations to the application to leverage cloud services while
+                avoiding major changes to the core architecture. </span><span class="c0">Use Case</span><span
+                class="c2">: Migrating a database to Amazon RDS while keeping the application largely intact.</span>
+        </li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Refactoring (Re-architecting)</span><span class="c16">:
+            </span><span class="c4">Redesign the application to fully utilize cloud-native features and services, often
+                resulting in better performance and scalability. </span><span class="c0">Use Case</span><span
+                class="c2">: Breaking a monolithic application into microservices for improved agility and
+                scalability.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Repurchasing</span><span class="c16">: </span><span
+                class="c4">Move to a different product, often a SaaS solution, effectively replacing the existing
+                application. </span><span class="c0">Use Case</span><span class="c2">: Switching from an on-premises CRM
+                to a cloud-based CRM solution like Salesforce.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Retiring</span><span class="c16">:</span><span
+                class="c4">&nbsp;Identify and decommission applications that are no longer useful or needed.
+            </span><span class="c0">Use Case</span><span class="c2">: Phasing out obsolete applications to streamline
+                operations and reduce costs.</span></li>
+        <li class="c1 c5 li-bullet-0"><span class="c0">Retaining</span><span class="c4">: Keep certain applications
+                on-premises or in their current state while determining their long-term cloud strategy. </span><span
+                class="c0">Use Case</span><span class="c4">: Maintaining regulatory compliance for specific applications
+                that cannot move to the cloud yet.</span></li>
+    </ol>
+    <h2 class="c12" id="h.omrdlteam07l"><span class="c9">Shared Responsibility Model</span></h2>
+    <p class="c1"><span class="c4">It defines the division of security and compliance responsibilities between cloud
+            service providers (like AWS) and their customers. </span></p>
+    <table class="c37">
+        <tr class="c3">
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">AWS</span></p>
+            </td>
+            <td class="c6" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">User</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Data protection (at rest &ndash; Server Side Encryption, in
+                        transit)</span></p>
+            </td>
+            <td class="c6" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Data protection (at rest &ndash; Customer Side Encryption)</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Training data center staff</span></p>
+            </td>
+            <td class="c6" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Training company employees</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">The physical security of AWS facilities</span></p>
+            </td>
+            <td class="c6" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Defining network firewalls inside the VPC</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Patching and updating the hypervisor, patching the network
+                        hardware</span></p>
+            </td>
+            <td class="c6" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Patch the guest OS, updating the OS, patching OSs on EC2</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Decommission deprecated storage devices</span></p>
+            </td>
+            <td class="c6" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Customer data integrity</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Maintains the configuration of its infrastructure devices</span></p>
+            </td>
+            <td class="c6" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Configure an EC2 instance</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">AWS API endpoints</span></p>
+            </td>
+            <td class="c6" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Updating the database engine</span></p>
+            </td>
+        </tr>
+        <tr class="c3">
+            <td class="c7" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">High availability and scaling</span></p>
+            </td>
+            <td class="c6" colspan="1" rowspan="1">
+                <p class="c10"><span class="c2">Consider new resources within AWS account</span></p>
+            </td>
+        </tr>
+    </table>
+    <p class="c21"><span class="c0">Shared Controls</span><span class="c2">: Controls which apply to both the
+            infrastructure layer and customer layers, but in completely separate contexts or perspectives. In a shared
+            control, AWS provides the requirements for the infrastructure and the customer must provide their own
+            control implementation within their use of AWS services. Examples include:</span></p>
+    <ul class="c13 lst-kix_9mtu3jjntmua-0 start">
+        <li class="c25 li-bullet-0"><span class="c2">Patch Management &ndash; AWS is responsible for patching and fixing
+                flaws within the infrastructure, but customers are responsible for patching their guest OS and
+                applications.</span></li>
+        <li class="c25 li-bullet-0"><span class="c2">Configuration Management &ndash; AWS maintains the configuration of
+                its infrastructure devices, but a customer is responsible for configuring their own guest operating
+                systems, databases, and applications.</span></li>
+        <li class="c1 c34 li-bullet-0"><span class="c4">Awareness &amp; Training - AWS trains AWS employees, but a
+                customer must train their own employees.</span></li>
+    </ul>
+    <h2 class="c15" id="h.i3b226dubh2"><span class="c9">AWS Financial Management Tools</span></h2>
+    <p class="c1"><span class="c0">AWS Pricing Calculator</span><span class="c4">: A tool that creates </span><span
+            class="c0">cost estimates</span><span class="c2">.</span></p>
+    <p class="c1"><span class="c0">AWS Billing Conductor</span><span class="c2">: A flexible billing and pricing
+            management tool that allows organizations to customize their AWS billing and usage reporting. It provides a
+            way to create custom pricing plans, manage costs, and gain insights into AWS service usage, making it easier
+            for businesses to allocate expenses accurately.</span></p>
+    <p class="c1"><span class="c0">AWS Billing Dashboard</span><span class="c4">: A central place to </span><span
+            class="c0">view your AWS billing and account usage</span><span class="c2">. It allows you to compare billing
+            periods.</span></p>
+    <p class="c1"><span class="c0">AWS Budgets</span><span class="c4">: A service that enables you to </span><span
+            class="c0">set custom cost and usage budgets</span><span class="c2">&nbsp;for your AWS account and receive
+            alerts when your usage exceeds defined thresholds. It is updated 3 times a day.</span></p>
+    <p class="c1"><span class="c0">AWS Budgets Reports</span><span class="c2">: Automates the generation and delivery of
+            budget reports to keep stakeholders informed about spending.</span></p>
+    <p class="c1"><span class="c0">AWS Cost Explorer</span><span class="c4">: A tool that allows you to </span><span
+            class="c0">visualize and analyze your AWS spending patterns over time</span><span class="c2">. It helps you
+            understand your cost and usage trends.</span></p>
+    <p class="c1"><span class="c0">AWS Cost and Usage Report</span><span class="c2">: It tracks your AWS usage and
+            provides estimated charges associated with your account.</span></p>
+    <p class="c1"><span class="c0">AWS Marketplace</span><span class="c2">: An online store that provides a curated
+            catalog of software, data, and services. It allows customers to find, buy, and immediately deploy
+            third-party applications and services.</span></p>
+    <div>
+        <p class="c22 c31"><span class="c19 c27"></span></p>
+    </div>
+</body>
+
+</html>
