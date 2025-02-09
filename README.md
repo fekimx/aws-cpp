@@ -1,17 +1,15 @@
 # AWS Cloud Practitioner Certification Practice Quiz
 
-A web application to help users prepare for AWS Cloud Practitioner certification exams through exam information, detailed notes, and interactive quizzes.
+This project is a website designed to help users learn AWS Cloud Practitioner concepts and test their knowledge through quizzes. 
+awspractitionerprep.com
 
 ## Features
 
-- Exam information
-- Detailed notes
-- Interactive quizzes
-- Immediate feedback on answers
-- Mobile-responsive design
-- Random quiz questions from various AWS service categories
-- Multiple-choice format similar to actual AWS exams
-- Category-based question grouping
+📚 Learn about the exam: General information about the exam, key concepts, and prerequisites  
+📚 Learn AWS Concepts: Explore key concepts related to the AWS Cloud Practitioner exam.  
+📝 Quiz Yourself: Take quizzes to reinforce your understanding.  
+📊 Dynamic and Static Questions: Questions are sourced from two static files (HTML and JSON) for a mix of static and dynamic content.  
+⚛️ React-Based: Built with React and Bootstrap for a responsive and modern user experience.
 
 ## Technologies Used
 
