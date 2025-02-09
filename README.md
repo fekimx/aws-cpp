@@ -5,7 +5,7 @@ awspractitionerprep.com
 
 ## Features
 
-📚 Learn about the exam: General information about the exam, key concepts, and prerequisites  
+✏️ Learn about the exam: General information about the exam, key concepts, and prerequisites  
 📚 Learn AWS Concepts: Explore key concepts related to the AWS Cloud Practitioner exam.  
 📝 Quiz Yourself: Take quizzes to reinforce your understanding.  
 📊 Dynamic and Static Questions: Questions are sourced from two static files (HTML and JSON) for a mix of static and dynamic content.  
